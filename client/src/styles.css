@@ -1,0 +1,123 @@
+:root {
+  --bg: #f9fafb;
+  --text: #111827;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --border: #d1d5db;
+  --button-bg: #e5e7eb;
+  --button-text: #111827;
+}
+
+[data-theme="dark"] {
+  --bg: #0b0f14;
+  --text: #e6edf3;
+  --card-bg: rgba(17, 24, 39, 0.85); /* dark transparent */
+  --border: #374151;
+  --button-bg: #0d1117;
+  --button-text: #e6edf3;
+}
+
+/* Body with meme background */
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", "Brush Script MT", cursive, sans-serif;
+  background: var(--bg) url("https://i.imgflip.com/56k6b5.png") center/cover no-repeat fixed;
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 880px;
+}
+
+/* Card (the meme generator box) */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* Inputs + buttons */
+input,
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-size: 1rem;
+  margin-bottom: 16px; /* spacing between inputs */
+  font-family: "Comic Sans MS", "Brush Script MT", cursive, sans-serif;
+}
+
+button {
+  cursor: pointer;
+  font-weight: 700;
+  transition: filter 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Row for top/bottom text */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px; /* ✅ more space below the row */
+}
+
+/* Add space between form groups */
+form > div {
+  margin-bottom: 20px; /* ✅ separates Image block from the row */
+}
+
+/* Meme preview */
+.preview {
+  display: grid;
+  place-items: center;
+  margin-top: 20px;
+}
+
+.preview img {
+  max-width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Footer */
+.footer {
+  opacity: 0.7;
+  margin-top: 12px;
+  font-size: 12px;
+  text-align: center;
+  font-family: "Comic Sans MS", "Brush Script MT", cursive, sans-serif;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  float: right;
+  margin-bottom: 12px;
+}

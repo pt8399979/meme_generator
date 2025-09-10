@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: ../Dockerfile.client
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/app         # enables hot reload if you edit code
+      - /app/node_modules     # prevents overwriting node_modules
+    stdin_open: true
+    tty: true
+
+  server:
+    build:
+      context: ./server
+      dockerfile: ../Dockerfile.server
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    depends_on:
+      - python
+
+  python:
+    build:
+      context: ./python-service
+      dockerfile: ../Dockerfile.python
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./python-service:/app
