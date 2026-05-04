@@ -1,0 +1,5 @@
+echo "pnp_ai_fast/" >> .gitignore
+echo "pnp_ai_working/" >> .gitignore
+echo "generated_images/" >> .gitignore
+echo "__pycache__/" >> .gitignore
+echo "*.pyc" >> .gitignore
