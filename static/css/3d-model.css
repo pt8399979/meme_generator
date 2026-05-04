@@ -1,0 +1,272 @@
+.ai-visualization {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.ai-creative-core {
+    position: relative;
+    width: 320px;
+    height: 320px;
+}
+
+/* Central Creative Hub */
+.creative-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+    animation: hubPulse 4s ease-in-out infinite;
+    z-index: 10;
+}
+
+.creative-hub i {
+    font-size: 2rem;
+    color: white;
+}
+
+@keyframes hubPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        box-shadow: 0 0 60px rgba(59, 130, 246, 0.6);
+    }
+}
+
+/* Orbiting Platforms */
+.platform {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: orbit 8s linear infinite;
+    border: 2px solid;
+    z-index: 5;
+}
+
+.platform-1 {
+    top: 20%;
+    left: 20%;
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);
+    animation-delay: 0s;
+}
+
+.platform-2 {
+    top: 20%;
+    right: 20%;
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.3);
+    animation-delay: -2s;
+}
+
+.platform-3 {
+    bottom: 20%;
+    left: 20%;
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.3);
+    animation-delay: -4s;
+}
+
+.platform-4 {
+    bottom: 20%;
+    right: 20%;
+    background: rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.3);
+    animation-delay: -6s;
+}
+
+.platform i {
+    font-size: 1.5rem;
+}
+
+.platform-1 i { color: #3b82f6; }
+.platform-2 i { color: #f59e0b; }
+.platform-3 i { color: #10b981; }
+.platform-4 i { color: #8b5cf6; }
+
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg) translateX(120px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(120px) rotate(-360deg);
+    }
+}
+
+/* Connection Beams */
+.connection-beam {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--text-accent), transparent);
+    transform-origin: left center;
+    top: 50%;
+    left: 50%;
+    animation: beamFlow 3s linear infinite;
+    z-index: 2;
+}
+
+.beam-1 { width: 120px; transform: rotate(45deg); animation-delay: 0s; }
+.beam-2 { width: 120px; transform: rotate(135deg); animation-delay: 0.5s; }
+.beam-3 { width: 120px; transform: rotate(225deg); animation-delay: 1s; }
+.beam-4 { width: 120px; transform: rotate(315deg); animation-delay: 1.5s; }
+
+@keyframes beamFlow {
+    0% {
+        opacity: 0;
+        background: linear-gradient(90deg, transparent, var(--text-accent), transparent);
+    }
+    50% {
+        opacity: 1;
+        background: linear-gradient(90deg, transparent, var(--text-accent), var(--text-accent), transparent);
+    }
+    100% {
+        opacity: 0;
+        background: linear-gradient(90deg, transparent, transparent, var(--text-accent), transparent);
+    }
+}
+
+/* Floating Creative Elements */
+.creative-element {
+    position: absolute;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    animation: creativeFloat 6s ease-in-out infinite;
+    white-space: nowrap;
+    z-index: 15;
+    text-align: center;
+    min-width: 80px;
+}
+
+.element-1 {
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #3b82f6;
+    animation-delay: 0s;
+}
+
+.element-2 {
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    color: #f59e0b;
+    animation-delay: 1.5s;
+}
+
+.element-3 {
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #10b981;
+    animation-delay: 3s;
+}
+
+.element-4 {
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    color: #8b5cf6;
+    animation-delay: 4.5s;
+}
+
+@keyframes creativeFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateY(-10px) scale(1.03);
+        opacity: 1;
+    }
+}
+
+/* Data Particles */
+.data-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--text-accent);
+    border-radius: 50%;
+    animation: particleMove 4s linear infinite;
+    z-index: 1;
+}
+
+.particle-1 { top: 30%; left: 40%; animation-delay: 0s; }
+.particle-2 { top: 60%; right: 30%; animation-delay: 1s; }
+.particle-3 { bottom: 40%; left: 30%; animation-delay: 2s; }
+.particle-4 { top: 40%; right: 40%; animation-delay: 3s; }
+
+@keyframes particleMove {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(40px, -40px) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Glow Effects */
+.glow-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgba(59, 130, 246, 0.1);
+    border-radius: 50%;
+    animation: glowRotate 20s linear infinite;
+    z-index: 1;
+}
+
+.glow-circle:nth-child(1) {
+    width: 180px;
+    height: 180px;
+}
+
+.glow-circle:nth-child(2) {
+    width: 250px;
+    height: 250px;
+    border-color: rgba(139, 92, 246, 0.1);
+    animation-direction: reverse;
+    animation-duration: 25s;
+}
+
+@keyframes glowRotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

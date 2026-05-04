@@ -1,0 +1,59 @@
+<section id="ai" class="ai-section">
+    <div class="container">
+        <h2 class="section-title slide-in-top">AI Image Generator</h2>
+        <p class="section-subtitle slide-in-top stagger-delay-1">Transform your text into amazing images</p>
+        
+        <div class="ai-container">
+            <div class="input-section slide-in-left stagger-delay-2">
+                <div class="input-group">
+                    <label for="prompt">Prompt</label>
+                    <textarea id="prompt" placeholder="Describe the image you want to generate..." rows="4"></textarea>
+                </div>
+                
+                <div class="input-group">
+                    <label for="negative-prompt">Negative Prompt (Optional)</label>
+                    <textarea id="negative-prompt" placeholder="What you don't want in the image..." rows="3"></textarea>
+                </div>
+                
+                <div class="settings-group">
+                    <div class="setting">
+                        <label for="steps">Steps: <span id="steps-value">20</span></label>
+                        <input type="range" id="steps" min="15" max="30" value="20">
+                        <small>Lower = Faster, Higher = Better quality</small>
+                    </div>
+                    
+                    <div class="setting">
+                        <label for="guidance-scale">Guidance Scale: <span id="scale-value">7.5</span></label>
+                        <input type="range" id="guidance-scale" min="5" max="12" step="0.5" value="7.5">
+                        <small>Lower = More creative, Higher = Follows prompt closely</small>
+                    </div>
+                </div>
+
+                <button id="generate-btn" class="generate-button">
+                    <i class="fas fa-magic"></i>
+                    Generate Fast Image
+                </button>
+                
+                <div id="status" class="status-message"></div>
+            </div>
+            
+            <div class="output-section slide-in-right stagger-delay-3">
+                <div id="output-container" class="output-container">
+                    <div id="placeholder" class="output-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Your generated image will appear here</p>
+                        <small>Optimized for fast generation (20-40 seconds)</small>
+                    </div>
+                    <div id="result" class="output-result" style="display: none;">
+                        <img id="generated-image" src="" alt="Generated Image">
+                        <div id="image-info" class="image-info"></div>
+                        <button id="download-btn" class="download-button" style="display: none;">
+                            <i class="fas fa-download"></i>
+                            Download Image
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
