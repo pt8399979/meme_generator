@@ -1,24 +1,54 @@
-# 🤖 PNP-AI — AI Image Generator
+# Dynamic Programming (DP)
 
-A powerful AI-powered image generation web application built with Python.  
-Generate stunning images using AI models directly from your browser!
+Dynamic Programming is an optimization technique used to solve complex problems by breaking them down into smaller subproblems and storing the results to avoid repeated computations.
 
-## ✨ Features
+## 🚀 Key Concepts
 
-- 🎨 AI-powered image generation
-- 🌐 Web-based interface (no installation needed to use)
-- ⚡ Fast generation with optimized models
-- 💾 Auto-saves generated images
-- 🛠️ Easy setup with one-click installer
+* **Overlapping Subproblems**: Same subproblems are solved multiple times.
+* **Optimal Substructure**: Final solution is built from optimal solutions of smaller subproblems.
+* **Memoization (Top-Down)**: Uses recursion + caching.
+* **Tabulation (Bottom-Up)**: Uses iteration and builds solution step-by-step.
 
-## 🛠️ Tech Stack
+## 📌 Why Use DP?
 
-- **Backend** — Python, Flask
-- **AI Model** — PyTorch / Diffusion Models
-- **Frontend** — HTML, CSS, JavaScript
-- **Image Processing** — PIL / NumPy
+* Improves time complexity
+* Avoids redundant calculations
+* Efficient for optimization problems
 
-## 🚀 Getting Started
+## 🧠 Common Problem Types
 
-### 1. Clone the repository
-```bash
+* Fibonacci Sequence
+* Knapsack Problem
+* Longest Common Subsequence (LCS)
+* Coin Change Problem
+* Minimum Path Sum
+
+## ⚙️ Approach
+
+1. Identify if the problem has overlapping subproblems
+2. Define the state (dp array)
+3. Write recurrence relation
+4. Implement using memoization or tabulation
+
+## 💻 Example (Fibonacci - Tabulation)
+
+```java
+int fib(int n) {
+    int[] dp = new int[n+1];
+    dp[0] = 0; dp[1] = 1;
+
+    for (int i = 2; i <= n; i++)
+        dp[i] = dp[i-1] + dp[i-2];
+
+    return dp[n];
+}
+```
+
+## 📈 Complexity
+
+* Time: O(n)
+* Space: O(n)
+
+## 📚 Conclusion
+
+Dynamic Programming is a powerful technique widely used in coding interviews and real-world problem solving to optimize recursive solutions and improve performance.
