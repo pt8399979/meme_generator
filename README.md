@@ -1,54 +1,43 @@
-# Dynamic Programming (DP)
+# 🤖 PNP-AI — AI Image Generator
 
-Dynamic Programming is an optimization technique used to solve complex problems by breaking them down into smaller subproblems and storing the results to avoid repeated computations.
+A powerful AI-powered image generation web application built with Python.  
+Generate stunning images using AI models directly from your browser!
 
-## 🚀 Key Concepts
+## ✨ Features
 
-* **Overlapping Subproblems**: Same subproblems are solved multiple times.
-* **Optimal Substructure**: Final solution is built from optimal solutions of smaller subproblems.
-* **Memoization (Top-Down)**: Uses recursion + caching.
-* **Tabulation (Bottom-Up)**: Uses iteration and builds solution step-by-step.
+- 🎨 AI-powered image generation
+- 🌐 Web-based interface (no installation needed to use)
+- ⚡ Fast generation with optimized models
+- 💾 Auto-saves generated images
+- 🛠️ Easy setup with one-click installer
 
-## 📌 Why Use DP?
+## 🛠️ Tech Stack
 
-* Improves time complexity
-* Avoids redundant calculations
-* Efficient for optimization problems
+- **Backend** — Python, Flask
+- **AI Model** — PyTorch / Diffusion Models
+- **Frontend** — HTML, CSS, JavaScript
+- **Image Processing** — PIL / NumPy
 
-## 🧠 Common Problem Types
+## 🚀 Getting Started
 
-* Fibonacci Sequence
-* Knapsack Problem
-* Longest Common Subsequence (LCS)
-* Coin Change Problem
-* Minimum Path Sum
-
-## ⚙️ Approach
-
-1. Identify if the problem has overlapping subproblems
-2. Define the state (dp array)
-3. Write recurrence relation
-4. Implement using memoization or tabulation
-
-## 💻 Example (Fibonacci - Tabulation)
-
-```java
-int fib(int n) {
-    int[] dp = new int[n+1];
-    dp[0] = 0; dp[1] = 1;
-
-    for (int i = 2; i <= n; i++)
-        dp[i] = dp[i-1] + dp[i-2];
-
-    return dp[n];
-}
+### 1. Clone the repository
+```bash
+git clone https://github.com/pt8399979/meme_generator.git
+cd meme_generator
 ```
 
-## 📈 Complexity
+### 2. Install dependencies
+```bash
+python install.py
+```
+Or manually:
+```bash
+pip install -r requirements.txt
+```
 
-* Time: O(n)
-* Space: O(n)
+### 3. Run the app
+```bash
+python app.py
+```
 
-## 📚 Conclusion
-
-Dynamic Programming is a powerful technique widely used in coding interviews and real-world problem solving to optimize recursive solutions and improve performance.
+### 4. Open in browser
